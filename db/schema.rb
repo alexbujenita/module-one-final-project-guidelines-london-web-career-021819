@@ -13,12 +13,12 @@
 ActiveRecord::Schema.define(version: 2019_03_04_151317) do
 
   create_table "fish_locations", force: :cascade do |t|
-    t.integer "fish_id"
+    t.integer "fish_type_id"
     t.integer "location_id"
     t.integer "fish_count"
   end
 
-  create_table "fish_species", force: :cascade do |t|
+  create_table "fish_types", force: :cascade do |t|
     t.string "name"
     t.integer "min_points"
     t.integer "max_points"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2019_03_04_151317) do
 
   create_table "game_catches", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "fish_id"
+    t.integer "fish_type_id"
     t.integer "game_id"
     t.integer "score"
   end
