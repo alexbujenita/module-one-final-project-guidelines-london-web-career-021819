@@ -32,6 +32,16 @@ def main_menu
   end
 end
 
+def location_menu
+  prompt = TTY::Prompt.new
+  prompt.select('') do |menu|
+    menu.choice name: 'Crystal Lake',  value: 1
+    menu.choice name: 'Salt Water Swamp', value: 2
+    menu.choice name: 'Open Ocean',  value: 3
+    menu.choice name: 'Murky Meadows', value: 4
+  end
+end
+
 def game_over
   thx = Artii::Base.new
   puts thx.asciify("Thank you for playing")

@@ -6,8 +6,8 @@ class User < ActiveRecord::Base
     Game.create(total_points: 0, user_id: id)
   end
 
-  def fishing
-    fish = get_fish_from_db
+  def fishing(location)
+    fish = get_fish_from_db(location)
     fish_points = rand(fish.min_points..fish.max_points)
     range = (fish.max_points - fish.min_points) / 3
 
