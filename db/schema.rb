@@ -25,9 +25,8 @@ ActiveRecord::Schema.define(version: 2019_03_04_151317) do
   end
 
   create_table "game_catches", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "fish_type_id"
     t.integer "game_id"
+    t.integer "fish_type_id"
     t.integer "score"
   end
 
