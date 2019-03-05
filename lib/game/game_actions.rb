@@ -9,11 +9,9 @@ end
 def fishing_session(user, location)
   times_fished = 0
   thrown_back_fish = 0
-  # binding.pry
   until times_fished == 5
     user.fishing(location)
     fish_caught = FishType.find(GameCatch.last.fish_type_id)
-    # puts "You caught a #{fish_caught.name}!"
     puts "-" * 80
     case fishing_menu_when_fish_caught
     when 1
@@ -37,8 +35,6 @@ def fishing_session(user, location)
       thrown_back_fish +=1
       end
     end
-    # binding.pry
-    # 'asd'
   end
 end
 
@@ -80,12 +76,6 @@ end
 def main_menu_method
   case main_menu
   when 1
-    # user = create_user
-    # puts 'Get ready for your fishing day out!'
-    # sleep 1
-    # play(user)
-    # main_menu_method
-
     user = create_user
     system('clear')
     puts "Welcome to Fish Frenzy #{user.username}. Choose a location to go fishing:"
@@ -104,5 +94,4 @@ def main_menu_method
   when 4
     game_over
   end
-
 end
