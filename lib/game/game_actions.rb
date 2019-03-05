@@ -12,6 +12,13 @@ def show_rules
   "Rules of the game"
 end
 
+def top_ten_leaderboard
+  top_ten = Game.order(total_points: :desc).limit(10)
+  top_ten.each do |game|
+    puts "#{User.find(game.user_id).username}  -  #{game.total_points}"
+  end
+end
+
 def main_menu_method
   case main_menu
   when 1
@@ -19,15 +26,16 @@ def main_menu_method
     puts 'Get ready for your fishing day out!'
     sleep 1
     play(user)
+    main_menu_method
   when 2
     puts 'Rules of the Game'
     show_rules
     main_menu_method
   when 3
-    puts 'View Leaderboards'
+    top_ten_leaderboard
     main_menu_method
   when 4
     game_over
   end
-  
+
 end
