@@ -1,8 +1,8 @@
 def greeting
-  puts "Welcome... to Freaky Fish"
-  sleep 0.5
-  puts "Please login"
-  sleep 0.5
+  # system("artii", "'Fish Frenzy'", "--font slant")
+  a = Artii::Base.new :font => 'slant'
+  puts a.asciify('Fish Frenzy')
+  sleep 3
 end
 
 def login
