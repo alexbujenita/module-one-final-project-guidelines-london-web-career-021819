@@ -3,6 +3,7 @@ def greeting
   a = Artii::Base.new :font => 'slant'
   puts a.asciify('Fish Frenzy')
   sleep 0.1
+  'Copyleft 2019'
 end
 
 def login
@@ -39,6 +40,14 @@ def location_menu
     menu.choice name: 'Salt Water Swamp', value: 2
     menu.choice name: 'Open Ocean',  value: 3
     menu.choice name: 'Murky Meadows', value: 4
+  end
+end
+
+def fishing_menu_when_fish_caught
+  fish_menu = TTY::Prompt.new
+  fish_menu.select('What do you want to do with this fish?') do |menu|
+    menu.choice name: 'Keep the fish', value: 1
+    menu.choice name: 'Throw it back in the water', value: 2
   end
 end
 
