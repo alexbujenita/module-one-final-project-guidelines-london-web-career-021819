@@ -21,7 +21,7 @@ def get_fish_from_db(location)
   elsif number_selected >= count_array[3]+1 && number_selected <= count_array[4] && count_array[3] != count_array[4]
     FishType.find_by(name: "Blobfish")
   elsif number_selected >= count_array[4]+1 && number_selected <= count_array[5] && count_array[4] != count_array[5]
-    FishType.find_by(name: "Halibt")
+    FishType.find_by(name: "Halibut")
   elsif number_selected >= count_array[5]+1 && number_selected <= count_array[6] && count_array[5] != count_array[6]
     FishType.find_by(name: "Tuna")
   elsif number_selected >= count_array[6]+1 && number_selected <= count_array[7] && count_array[6] != count_array[7]
