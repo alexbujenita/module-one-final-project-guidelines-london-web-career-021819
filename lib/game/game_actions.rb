@@ -70,7 +70,7 @@ end
 
 def top_ten_leaderboard
   system('clear')
-  puts "Top 10 Highscores"
+  puts "TOP 10 HIGHSCORES"
   table = TTY::Table.new
   table << ['Rank', 'Username','Score']
   n = 1
@@ -84,6 +84,7 @@ end
 
 def fish_stats_table
   system('clear')
+  puts "ALL FISH SPECIES"
   table = TTY::Table.new
   table << ['Species','Min Points', 'Max Points']
   FishType.all.each do |fish|
@@ -113,6 +114,7 @@ def main_menu_method
     main_menu_method
   when 3
     top_ten_leaderboard
+    puts ""
     sleep 3
     main_menu_method
   when 4
