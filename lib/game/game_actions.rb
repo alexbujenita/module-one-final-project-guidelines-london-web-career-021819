@@ -9,6 +9,7 @@ def fishing_session(user, location)
   times_fished = 0
   thrown_back_fish = 0
   puts ""
+  sleep 1
   until times_fished == 5
     puts "*" * 80
     user.fishing(location)
@@ -45,10 +46,10 @@ def show_rules
   system('clear')
   puts 'RULES OF FISHING FRENZY'
   puts '- Each time you play you have 5 opportunities to catch a fish!'
-  puts "- If the fish you catch doesn't meet your high standards, you only have 3 chances to release your fish and find another before the end of the fishing day"
   puts '- Every time you catch a fish you must decide whether you would like to keep it forever or release it back into the wild'
-  puts '- Your final score is based upon the final 3 fish you choose to keep'
-  puts '- Be cautious with which fish you decide to keep!'
+  puts '- Careful! You can only release 3 fish back into the wild before you run out of bait'
+  puts '- Your total score is based upon the final 5 fish you choose to keep'
+  puts '- Check out the Fish Species table to see which fish score the most points!'
   puts ''
 end
 
@@ -71,13 +72,42 @@ end
 
 def top_ten_leaderboard
   system('clear')
-  puts "Top 10 Highscores"
+  puts "TOP 10 HIGHSCORES"
+  table = TTY::Table.new
+  table << ['Rank', 'Username','Score']
+  n = 1
   top_ten = Game.order(total_points: :desc).limit(10)
   top_ten.each do |game|
-    puts "#{game.total_points}  - #{User.find(game.user_id).username}"
+    table << [n, User.find(game.user_id).username, game.total_points]
+    n +=1
   end
-  puts ""
+  puts table.render :ascii
 end
+
+def fish_stats_table
+  system('clear')
+  puts "ALL FISH SPECIES"
+  table = TTY::Table.new
+  table << ['Species','Min Points', 'Max Points']
+  FishType.all.each do |fish|
+    table << [fish.name, fish.min_points, fish.max_points]
+  end
+
+  puts table.render :ascii
+end
+
+
+def location_info
+  system('clear')
+  puts "CRYSTAL LAKE - Clear blue waters and lack of waves attract ALL varities of fish. A ideal location for beginners."
+  puts ""
+  puts "OPEN OCEAN - Are you looking for average sized fish? You've chosen the wrong place. Only big game and tiny fish here."
+  puts ""
+  puts "MURKEY MEADOW - All medium fish have been eaten by a group of Sunfish varying massivly in size. Try and catch some."
+  puts ""
+  puts "SALT SWAMP - The swamps varying environment make it a hard place to fish. Who knows what you might find."
+end
+
 
 def main_menu_method
   case main_menu
@@ -91,15 +121,27 @@ def main_menu_method
     puts 'Get ready for your fishing day out!'
     sleep 1
     play(user, location)
+    puts ""
+    sleep 2
     main_menu_method
   when 2
     show_rules
     main_menu_method
   when 3
     top_ten_leaderboard
+    puts ""
     sleep 3
     main_menu_method
   when 4
     game_over
+  when 5
+    fish_stats_table
+    puts ""
+    sleep 3
+    main_menu_method
+  when 6
+    location_info
+    puts ""
+    main_menu_method
   end
 end
