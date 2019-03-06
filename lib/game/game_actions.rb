@@ -93,6 +93,19 @@ def fish_stats_table
   puts table.render :ascii
 end
 
+
+def location_info
+  system('clear')
+  puts "CRYSTAL LAKE - Clear blue waters and lack of waves attract ALL varities of fish. A ideal location for beginners."
+  puts ""
+  puts "OPEN OCEAN - Are you looking for average sized fish? You've chosen the wrong place. Only big game and tiny fish here."
+  puts ""
+  puts "MURKEY MEADOW - All medium fish have been eaten by a group of Sunfish varying massivly in size. Try and catch some."
+  puts ""
+  puts "SALT SWAMP - The swamps varying environment make it a hard place to fish. Who knows what you might find."
+end
+
+
 def main_menu_method
   case main_menu
   when 1
@@ -121,6 +134,10 @@ def main_menu_method
     fish_stats_table
     puts ""
     sleep 3
+    main_menu_method
+  when 6
+    location_info
+    puts ""
     main_menu_method
   end
 end
