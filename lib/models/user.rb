@@ -27,6 +27,9 @@ class User < ActiveRecord::Base
   def update_total_score
     score = GameCatch.where(game_id: Game.last.id).sum(:score)
     Game.last.update(total_points: score)
-    puts "During this fishing session you accumulated #{Game.last.total_points} points!"
+    puts ""
+    puts "^" * 80
+    puts "You got a total of #{Game.last.total_points} points! Check the leaderboard and see if you placed!"
+    puts "^" * 80
   end
 end
