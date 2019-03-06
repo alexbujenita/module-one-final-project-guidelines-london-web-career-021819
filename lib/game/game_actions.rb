@@ -12,16 +12,18 @@ def fishing_session(user, location)
   until times_fished == 5
     puts "*" * 80
     user.fishing(location)
-
     puts "*" * 80
     case fishing_menu_when_fish_caught
     when 1
       puts "Fish kept"
       puts ''
+      in_between_fishing(in_between_menu) # Do SOmething
+      # binding.pry
       times_fished += 1
     when 2
       if thrown_back_fish == 3
         puts "You can't throw any more fish..."
+        in_between_fishing(in_between_menu) # Do Something
         times_fished += 1
       elsif thrown_back_fish == 2
         puts "This was the last fish that you could throw."
@@ -83,9 +85,9 @@ def main_menu_method
     user = create_user
     system('clear')
     puts "Welcome to Fish Frenzy #{user.username}. Choose a location to go fishing:"
-    say_hi_to_user(user.username)
+    # say_hi_to_user(user.username)
     location = location_menu_method
-    say_location(location)
+    # say_location(location)
     puts 'Get ready for your fishing day out!'
     sleep 1
     play(user, location)
