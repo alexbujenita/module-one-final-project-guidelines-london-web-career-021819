@@ -1,56 +1,34 @@
-def crystal_lake
-  case rand(1..337)
-  when 1..80 then 'Silver Carp'
-  when 81..155 then 'Salmon'
-  when 156..205 then 'Sea Bass'
-  when 206..245 then 'Trout'
-  when 246..275 then 'Blobfish'
-  when 276..300 then 'Halibut'
-  when 301..320 then 'Tuna'
-  when 321..330 then 'Flabby Whalefish'
-  when 331..335 then 'Sunfish'
-  when 336..337 then 'Merlin'
-  end
+def fish_from_location(id)
+  FishLocation.all.select{|l| l.location_id == id}
 end
 
-def salt_water_swamp
-  case rand(1..227)
-  when 0..32 then 'Sea Bass'
-  when 33..82 then 'Trout'
-  when 83..132 then 'Blobfish'
-  when 133..182 then 'Halibut'
-  when 183..217 then 'Tuna'
-  when 218..227 then 'Flabby Whalefish'
-  end
- end
-
-def open_ocean
-  case rand(1..366)
-  when 1..150 then 'Silver Carp'
-  when 151..260 then 'Salmon'
-  when 261..295 then 'Tuna'
-  when 296..330 then 'Flabby Whalefish'
-  when 331..355 then 'Sunfish'
-  when 356..366 then 'Merlin'
-  end
+def cumulative_fish_count(id)
+  count = 0
+  fish_from_location(id).map{|f| count += f.fish_count}
 end
 
- def murky_meadows
-   case rand(1..337)
-   when 1..337 then 'Merlin'
-   end
- end
-
-
-
- def get_fish_from_db(location_choice)
-   if location_choice == 1
-     FishType.find_by(name: crystal_lake)
-   elsif location_choice == 2
-     FishType.find_by(name: salt_water_swamp)
-   elsif location_choice == 3
-     FishType.find_by(name: open_ocean)
-   elsif location_choice == 4
-     FishType.find_by(name: murky_meadows)
-   end
- end
+def get_fish_from_db(location)
+  count_array = cumulative_fish_count(location)
+  number_selected = rand(1..count_array[-1])
+  if number_selected >= 1 && number_selected <= count_array[0]
+    FishType.find_by(name: "Silver Carp")
+  elsif number_selected >= count_array[0]+1 && number_selected <= count_array[1] && count_array[0] != count_array[1]
+    FishType.find_by(name: "Trout")
+  elsif number_selected >= count_array[1]+1 && number_selected <= count_array[2] && count_array[1] != count_array[2]
+    FishType.find_by(name: "Sea Bass")
+  elsif number_selected >= count_array[2]+1 && number_selected <= count_array[3] && count_array[2] != count_array[3]
+    FishType.find_by(name: "Salmon")
+  elsif number_selected >= count_array[3]+1 && number_selected <= count_array[4] && count_array[3] != count_array[4]
+    FishType.find_by(name: "Blobfish")
+  elsif number_selected >= count_array[4]+1 && number_selected <= count_array[5] && count_array[4] != count_array[5]
+    FishType.find_by(name: "Halibt")
+  elsif number_selected >= count_array[5]+1 && number_selected <= count_array[6] && count_array[5] != count_array[6]
+    FishType.find_by(name: "Tuna")
+  elsif number_selected >= count_array[6]+1 && number_selected <= count_array[7] && count_array[6] != count_array[7]
+    FishType.find_by(name: "Flabby Whalefish")
+  elsif number_selected >= count_array[7]+1 && number_selected <= count_array[8] && count_array[7] != count_array[8]
+    FishType.find_by(name: "Sunfish")
+  elsif number_selected >= count_array[8]+1 && number_selected <= count_array[9] && count_array[8] != count_array[9]
+    FishType.find_by(name: "Merlin")
+  end
+end
