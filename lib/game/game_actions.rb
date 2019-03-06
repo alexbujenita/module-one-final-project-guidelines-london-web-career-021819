@@ -1,7 +1,6 @@
 def play(user, location)
   sleep 0.5
   user.create_game
-  puts 'fishing!'
   fishing_session(user, location)
   user.update_total_score
 end
@@ -9,28 +8,29 @@ end
 def fishing_session(user, location)
   times_fished = 0
   thrown_back_fish = 0
+  puts ""
   until times_fished == 5
+    puts "*" * 80
     user.fishing(location)
-    fish_caught = FishType.find(GameCatch.last.fish_type_id)
-    puts "-" * 80
+    puts "*" * 80
     case fishing_menu_when_fish_caught
     when 1
-      puts '*' * 80
       puts "Fish kept"
+      puts ''
       times_fished += 1
     when 2
       if thrown_back_fish == 3
         puts "You can't throw any more fish..."
-        puts '-' * 80
         times_fished += 1
       elsif thrown_back_fish == 2
         puts "This was the last fish that you could throw."
-        puts '-' * 80
         puts "Fishy probably will survive!"
+        puts ''
         GameCatch.last.delete
         thrown_back_fish +=1
       else
       puts "Fishy probably will survive!"
+      puts ''
       GameCatch.last.delete
       thrown_back_fish +=1
       end
@@ -67,10 +67,13 @@ def location_menu_method
 end
 
 def top_ten_leaderboard
+  system('clear')
+  puts "Top 10 Highscores"
   top_ten = Game.order(total_points: :desc).limit(10)
   top_ten.each do |game|
     puts "#{game.total_points}  - #{User.find(game.user_id).username}"
   end
+  puts ""
 end
 
 def main_menu_method
@@ -85,11 +88,11 @@ def main_menu_method
     play(user, location)
     main_menu_method
   when 2
-    puts 'Rules of the Game'
     show_rules
     main_menu_method
   when 3
     top_ten_leaderboard
+    sleep 3
     main_menu_method
   when 4
     game_over
