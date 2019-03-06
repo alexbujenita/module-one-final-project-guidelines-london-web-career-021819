@@ -130,14 +130,14 @@ def main_menu_method
   when 3
     top_ten_leaderboard
     puts ""
-    sleep 3
+    sleep 2
     main_menu_method
   when 4
     game_over
   when 5
     fish_stats_table
     puts ""
-    sleep 3
+    sleep 2
     main_menu_method
   when 6
     location_info
