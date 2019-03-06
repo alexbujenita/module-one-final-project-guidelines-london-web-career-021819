@@ -12,6 +12,7 @@ def fishing_session(user, location)
   until times_fished == 5
     puts "*" * 80
     user.fishing(location)
+
     puts "*" * 80
     case fishing_menu_when_fish_caught
     when 1
@@ -27,7 +28,7 @@ def fishing_session(user, location)
         puts "Fishy probably will survive!"
         puts ''
         GameCatch.last.delete
-        thrown_back_fish +=1
+        thrown_back_fish += 1
       else
       puts "Fishy probably will survive!"
       puts ''
@@ -41,28 +42,28 @@ end
 def show_rules
   system('clear')
   puts 'RULES OF FISHING FRENZY'
-  puts "- Each time you play you have 5 opportunities to catch a fish!"
+  puts '- Each time you play you have 5 opportunities to catch a fish!'
   puts "- If the fish you catch doesn't meet your high standards, you only have 3 chances to release your fish and find another before the end of the fishing day"
-  puts "- Every time you catch a fish you must decide whether you would like to keep it forever or release it back into the wild"
-  puts "- Your final score is based upon the final 3 fish you choose to keep"
-  puts "- Be cautious with which fish you decide to keep!"
-  puts ""
+  puts '- Every time you catch a fish you must decide whether you would like to keep it forever or release it back into the wild'
+  puts '- Your final score is based upon the final 3 fish you choose to keep'
+  puts '- Be cautious with which fish you decide to keep!'
+  puts ''
 end
 
 def location_menu_method
   case location_menu
-    when 1
-      puts 'You have chosen Crystal Lake!'
-      return 1
-    when 2
-      puts 'You have chosen Salt Water Swamp!'
-      return 2
-    when 3
-      puts 'You have chosen Open Ocean!'
-      return 3
-    when 4
-      puts 'You have chosen Murky Meadows!'
-      return 4
+  when 1
+    puts 'You have chosen Crystal Lake!'
+    1
+  when 2
+    puts 'You have chosen Salt Water Swamp!'
+    2
+  when 3
+    puts 'You have chosen Open Ocean!'
+    3
+  when 4
+    puts 'You have chosen Murky Meadows!'
+    4
   end
 end
 
@@ -82,7 +83,9 @@ def main_menu_method
     user = create_user
     system('clear')
     puts "Welcome to Fish Frenzy #{user.username}. Choose a location to go fishing:"
+    say_hi_to_user(user.username)
     location = location_menu_method
+    say_location(location)
     puts 'Get ready for your fishing day out!'
     sleep 1
     play(user, location)
