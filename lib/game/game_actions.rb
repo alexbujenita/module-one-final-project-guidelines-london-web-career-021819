@@ -79,7 +79,9 @@ def main_menu_method
     user = create_user
     system('clear')
     puts "Welcome to Fish Frenzy #{user.username}. Choose a location to go fishing:"
+    say_hi_to_user(user.username)
     location = location_menu_method
+    say_location(location)
     puts 'Get ready for your fishing day out!'
     sleep 1
     play(user, location)
