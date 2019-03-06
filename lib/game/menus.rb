@@ -1,3 +1,5 @@
+
+
 def in_between_menu
   prompt = TTY::Prompt.new
   options = ['Continue fishing', 'Drink', 'Say something']
@@ -19,6 +21,6 @@ def in_between_fishing(choice)
     puts "|"*100
     sleep 1
   when 'Say something'
-    puts "Random"
+    random_quote
   end
 end

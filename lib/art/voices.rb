@@ -24,3 +24,8 @@ def thanks_for_playing
   voices = %w[Alex Daniel Fiona Fred Karen Moira Tessa Veena Victoria Kyoko]
   `say -v #{voices.sample} "Thank you for playing, FISH FRENZY."`
 end
+
+def random_quote
+  voices = %w[Alex Daniel Fiona Fred Karen Moira Tessa Veena Victoria]
+  `say -v #{voices.sample} "#{Quote.find(Quote.pluck(:id).sample).sentence}"`
+end

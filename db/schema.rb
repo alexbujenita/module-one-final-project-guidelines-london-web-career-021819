@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_04_151317) do
+ActiveRecord::Schema.define(version: 2019_03_06_141933) do
 
   create_table "fish_locations", force: :cascade do |t|
     t.integer "fish_type_id"
@@ -37,6 +37,10 @@ ActiveRecord::Schema.define(version: 2019_03_04_151317) do
 
   create_table "locations", force: :cascade do |t|
     t.string "name"
+  end
+
+  create_table "quotes", force: :cascade do |t|
+    t.text "sentence"
   end
 
   create_table "users", force: :cascade do |t|
