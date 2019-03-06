@@ -27,5 +27,7 @@ end
 
 def random_quote
   voices = %w[Alex Daniel Fiona Fred Karen Moira Tessa Veena Victoria]
-  `say -v #{voices.sample} "#{Quote.find(Quote.pluck(:id).sample).sentence}"`
+  sntc = Quote.find(Quote.pluck(:id).sample).sentence
+  puts sntc
+  `say -v #{voices.sample} "#{sntc}"`
 end

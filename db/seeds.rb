@@ -1,19 +1,19 @@
 
-# quotes = [
-#   "Insane means fewer cameras!",
-#   "There are plenty of fish in the sea.",
-#   "No good fish goes anywhere without a porpoise.",
-#   "Give me a fish and I eat for a day. Teach me to fish and I eat for a lifetime.",
-#   "The biggest fish he ever caught were those that got away.",
-#   "Fish in another man's pond and you will catch crabs.",
-#   "The best way to observe a fish is to become a fish.",
-#   "Fish, to taste right, must swim three times. In water, in butter, and in wine.",
-#   "If you want to be a different fish, jump out of school.",
-#   "May the holes in your net be no larger than the fish in it.",
-#   "Fishing is the sport of drowning worms.",
-#   "Many men go fishing all of their lives without knowing that it is not fish they are after.",
-#   "Donate to Frenzy Fish"
-# ]
+quotes = [
+  "Insane means fewer cameras!",
+  "There are plenty of fish in the sea.",
+  "No good fish goes anywhere without a porpoise.",
+  "Give me a fish and I eat for a day. Teach me to fish and I eat for a lifetime.",
+  "The biggest fish he ever caught were those that got away.",
+  "Fish in another man's pond and you will catch crabs.",
+  "The best way to observe a fish is to become a fish.",
+  "Fish, to taste right, must swim three times. In water, in butter, and in wine.",
+  "If you want to be a different fish, jump out of school.",
+  "May the holes in your net be no larger than the fish in it.",
+  "Fishing is the sport of drowning worms.",
+  "Many men go fishing all of their lives without knowing that it is not fish they are after.",
+  "Donate to Frenzy Fish"
+]
 
 FishType.create(name: 'Silver Carp', min_points: 100, max_points: 200)
 FishType.create(name: 'Salmon', min_points: 200, max_points: 300)
@@ -34,7 +34,7 @@ Location.create(name: 'Murky Meadows')
 
 
 
-# quotes.each { |quote| Quote.create(sentence: quote) }
+quotes.each { |quote| Quote.create(sentence: quote) }
 
 FishLocation.create(fish_type_id: 1, location_id: 1, fish_count: 90)
 FishLocation.create(fish_type_id: 2, location_id: 1, fish_count: 80)
