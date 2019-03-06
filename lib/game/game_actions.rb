@@ -11,12 +11,12 @@ def fishing_session(user, location)
   thrown_back_fish = 0
   until times_fished == 5
     user.fishing(location)
-    fish_caught = FishType.find(GameCatch.last.fish_type_id)
-    puts "-" * 80
+    # fish_caught = FishType.find(GameCatch.last.fish_type_id)
+    puts '-' * 80
     case fishing_menu_when_fish_caught
     when 1
       puts '*' * 80
-      puts "Fish kept"
+      puts 'Fish kept'
       times_fished += 1
     when 2
       if thrown_back_fish == 3
@@ -24,15 +24,15 @@ def fishing_session(user, location)
         puts '-' * 80
         times_fished += 1
       elsif thrown_back_fish == 2
-        puts "This was the last fish that you could throw."
+        puts 'This was the last fish that you could throw.'
         puts '-' * 80
-        puts "Fishy probably will survive!"
+        puts 'Fishy probably will survive!'
         GameCatch.last.delete
-        thrown_back_fish +=1
+        thrown_back_fish += 1
       else
-      puts "Fishy probably will survive!"
-      GameCatch.last.delete
-      thrown_back_fish +=1
+        puts 'Fishy probably will survive!'
+        GameCatch.last.delete
+        thrown_back_fish += 1
       end
     end
   end
@@ -41,28 +41,28 @@ end
 def show_rules
   system('clear')
   puts 'RULES OF FISHING FRENZY'
-  puts "- Each time you play you have 5 opportunities to catch a fish!"
+  puts '- Each time you play you have 5 opportunities to catch a fish!'
   puts "- If the fish you catch doesn't meet your high standards, you only have 3 chances to release your fish and find another before the end of the fishing day"
-  puts "- Every time you catch a fish you must decide whether you would like to keep it forever or release it back into the wild"
-  puts "- Your final score is based upon the final 3 fish you choose to keep"
-  puts "- Be cautious with which fish you decide to keep!"
-  puts ""
+  puts '- Every time you catch a fish you must decide whether you would like to keep it forever or release it back into the wild'
+  puts '- Your final score is based upon the final 3 fish you choose to keep'
+  puts '- Be cautious with which fish you decide to keep!'
+  puts ''
 end
 
 def location_menu_method
   case location_menu
-    when 1
-      puts 'You have chosen Crystal Lake!'
-      return 1
-    when 2
-      puts 'You have chosen Salt Water Swamp!'
-      return 2
-    when 3
-      puts 'You have chosen Open Ocean!'
-      return 3
-    when 4
-      puts 'You have chosen Murky Meadows!'
-      return 4
+  when 1
+    puts 'You have chosen Crystal Lake!'
+    1
+  when 2
+    puts 'You have chosen Salt Water Swamp!'
+    2
+  when 3
+    puts 'You have chosen Open Ocean!'
+    3
+  when 4
+    puts 'You have chosen Murky Meadows!'
+    4
   end
 end
 
