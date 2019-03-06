@@ -9,3 +9,5 @@ gem "artii"
 gem "lolcat"
 gem "require_all"
 gem "tty-table"
+gem 'tty-spinner'
+gem 'tty-command'
