@@ -22,6 +22,7 @@ def main_menu
     menu.choice name: 'Play Game!',  value: 1
     menu.choice name: 'Rules', value: 2
     menu.choice name: 'Leaderboards',  value: 3
+    menu.choice name: 'View Fish Species', value:5
     menu.choice name: 'Quit Game', value: 4
   end
 end
