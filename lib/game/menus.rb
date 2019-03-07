@@ -9,18 +9,17 @@ end
 def in_between_fishing(choice)
   case choice
   when 'Continue fishing'
-    puts "That's the spirit mate"
+    puts ""
   when 'Drink'
     drink_prompt = TTY::Prompt.new
-    choices = %w(vodka beer wine whisky bourbon water)
+    choices = %w(Water Coffee Beer)
     drinks = drink_prompt.multi_select("What would you like to drink?", choices)
-    puts "Congratulations, you are drunk and alcoholic" if drinks.length == choices.length
-    puts "|"*100
     sleep 1
-    puts "You feel better now and can go back to fishing!"
-    puts "|"*100
-    sleep 1
+    puts "--------You're feeling refreshed now! Get back to fishing!--------"
+    puts ""
+    sleep 2
   when 'Say something'
     random_quote
+    puts ""
   end
 end
