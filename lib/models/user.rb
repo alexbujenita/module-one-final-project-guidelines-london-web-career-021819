@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
     elsif fish_points > fish.min_points + (2 * range) && fish_points <= fish.max_points
       size = 'large'
     end
-
+    fish_picture(fish.id)
     puts "You have caught a #{size} sized #{fish.name} - #{fish_points}pts"
     GameCatch.create(fish_type_id: fish.id, game_id: Game.last.id, score: fish_points)
     sleep 1
