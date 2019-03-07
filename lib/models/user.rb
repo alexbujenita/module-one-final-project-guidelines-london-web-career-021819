@@ -37,10 +37,10 @@ class User < ActiveRecord::Base
     prompt = "> "
     puts "Type in your password. (You won't see it)"
     print prompt
-    input1 = STDIN.noecho(&:gets).strip
+    input1 = STDIN.noecho(&:gets).strip.crypt("Kt")
     puts "Type it in again."
     print prompt
-    input2 = STDIN.noecho(&:gets).strip
+    input2 = STDIN.noecho(&:gets).strip.crypt("Kt")
     if input1 != input2
       puts "Password doesn't match, please try again."
       sleep 0.3
@@ -57,7 +57,7 @@ class User < ActiveRecord::Base
     prompt = "> "
     puts "Type in your current password. (You won't see it)"
     print prompt
-    pass_valid = STDIN.noecho(&:gets).strip
+    pass_valid = STDIN.noecho(&:gets).strip.crypt("Kt")
     if user.password == pass_valid
       User.find(self.id).update(password: new_pass)
     end
