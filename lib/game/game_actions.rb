@@ -97,6 +97,21 @@ def fish_stats_table
   puts table.render :ascii
 end
 
+def biggest_catch_table
+  system('clear')
+  puts "TOP 10 BIGGEST FISH CAUGHT"
+  table = TTY::Table.new
+  table << ['Rank', 'User','Species', 'Location', 'Points']
+  n = 1
+  top_ten = GameCatch.order(score: :desc).limit(10)
+  top_ten.each do |catch|
+    table << [n, catch.game.user.username, catch.fish_type.name, catch.game.location.name, catch.score]
+    n +=1
+  end
+
+  puts table.render :ascii
+end
+
 
 def location_info
   system('clear')
@@ -147,6 +162,11 @@ def main_menu_method
   when 7
     quiz
     puts ''
+    main_menu_method
+  when 8
+    biggest_catch_table
+    puts ""
+    sleep 2
     main_menu_method
   end
 end
