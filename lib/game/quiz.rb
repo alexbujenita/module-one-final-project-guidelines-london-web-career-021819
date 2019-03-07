@@ -146,7 +146,7 @@ end
 def seventh
   prompt = TTY::Prompt.new
   prompt.select("What are baby salmon called when emerging from their eggs?") do |menu|
-    menu.choice :name => 'Little Carp', value: 0
+    menu.choice :name => 'Little Salmon', value: 0
     menu.choice :name => 'Pry', value: 0
     menu.choice :name => 'Lil', value: 0
     menu.choice :name => 'Fry', value: 1
