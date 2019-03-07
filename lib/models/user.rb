@@ -34,6 +34,32 @@ class User < ActiveRecord::Base
   end
 
   def set_password
-    User.find(self.id)
+    prompt = "> "
+    puts "Type in your password. (You won't see it)"
+    print prompt
+    input1 = STDIN.noecho(&:gets).strip
+    puts "Type it in again."
+    print prompt
+    input2 = STDIN.noecho(&:gets).strip
+    if input1 != input2
+      puts "Password doesn't match, please try again."
+      sleep 0.3
+      set_password
+    else
+      User.find(self.id).update(password: input1)
+      puts "Password set!"
+      sleep 1
+    end
+  end
+
+  def update_password
+    user = User.find(self.id)
+    prompt = "> "
+    puts "Type in your current password. (You won't see it)"
+    print prompt
+    pass_valid = STDIN.noecho(&:gets).strip
+    if user.password == pass_valid
+      User.find(self.id).update(password: new_pass)
+    end
   end
 end
