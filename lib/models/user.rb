@@ -32,4 +32,8 @@ class User < ActiveRecord::Base
     puts "You got a total of #{Game.last.total_points} points! Check the leaderboard and see if you placed!"
     puts "^" * 80
   end
+
+  def set_password
+    User.find(self.id)
+  end
 end
