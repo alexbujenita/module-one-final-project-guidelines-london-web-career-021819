@@ -16,9 +16,9 @@ quotes = [
 ]
 
 FishType.create(name: 'Silver Carp', min_points: 100, max_points: 200)
-FishType.create(name: 'Salmon', min_points: 200, max_points: 300)
+FishType.create(name: 'Trout', min_points: 200, max_points: 300)
 FishType.create(name: 'Sea Bass', min_points: 300, max_points: 400)
-FishType.create(name: 'Trout', min_points: 350, max_points: 475)
+FishType.create(name: 'Salmon', min_points: 350, max_points: 475)
 FishType.create(name: 'Blobfish', min_points: 450, max_points: 550)
 FishType.create(name: 'Halibut', min_points: 450, max_points: 650)
 FishType.create(name: 'Tuna', min_points: 400, max_points: 700)
