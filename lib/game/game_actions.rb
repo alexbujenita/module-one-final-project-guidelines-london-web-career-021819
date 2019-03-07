@@ -1,6 +1,6 @@
 def play(user, location)
   sleep 0.5
-  user.create_game
+  user.create_game(location)
   fishing_session(user, location)
   user.update_total_score
 end

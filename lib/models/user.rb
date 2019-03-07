@@ -2,8 +2,8 @@ class User < ActiveRecord::Base
   has_many :games
   has_many :game_catches, through: :games
 
-  def create_game
-    Game.create(total_points: 0, user_id: id)
+  def create_game(location)
+    Game.create(total_points: 0, user_id: id, location_id: location)
   end
 
   def fishing(location)
