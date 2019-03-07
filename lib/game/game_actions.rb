@@ -29,16 +29,17 @@ def fishing_session(user, location)
         times_fished += 1
       elsif thrown_back_fish == 2
         puts "This was the last fish that you could throw."
-        puts "Fishy probably will survive!"
+        puts "The fishy will probably survive!"
         puts ''
         GameCatch.last.delete
         thrown_back_fish += 1
       else
-      puts "Fishy probably will survive!"
-      puts ''
-      GameCatch.last.delete
-      thrown_back_fish +=1
+        puts "Fishy probably will survive!"
+        puts ''
+        GameCatch.last.delete
+        thrown_back_fish +=1
       end
+    when 4
     end
   end
 end

@@ -17,7 +17,7 @@ def in_between_fishing(choice)
     drink_prompt.multi_select('What would you like to drink?', choices)
     sleep 1
     puts ""
-    puts "--------You're feeling refreshed now! Get back to fishing!--------"
+    puts "--------------You're feeling refreshed now! Get back to fishing!---------------"
     puts ""
     sleep 2
   when 'Say something'
