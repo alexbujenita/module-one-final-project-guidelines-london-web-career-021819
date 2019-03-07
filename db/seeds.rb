@@ -24,7 +24,7 @@ FishType.create(name: 'Halibut', min_points: 450, max_points: 650)
 FishType.create(name: 'Tuna', min_points: 400, max_points: 700)
 FishType.create(name: 'Flabby Whalefish', min_points: 550, max_points: 750)
 FishType.create(name: 'Sunfish', min_points: 300, max_points: 900)
-FishType.create(name: 'Merlin', min_points: 800, max_points: 1000)
+FishType.create(name: 'Blue Marlin', min_points: 800, max_points: 1000)
 
 
 Location.create(name: 'Crystal Lake')
@@ -79,4 +79,3 @@ FishLocation.create(fish_type_id: 7, location_id: 4, fish_count: 4)
 FishLocation.create(fish_type_id: 8, location_id: 4, fish_count: 3)
 FishLocation.create(fish_type_id: 9, location_id: 4, fish_count: 101)
 FishLocation.create(fish_type_id: 10, location_id: 4, fish_count: 3)
-
