@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2019_03_06_141933) do
   create_table "games", force: :cascade do |t|
     t.integer "user_id"
     t.integer "total_points"
+    t.integer "location_id"
   end
 
   create_table "locations", force: :cascade do |t|

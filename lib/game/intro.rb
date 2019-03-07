@@ -2,7 +2,7 @@ def greeting
   # system("artii", "'Fish Frenzy'", "--font slant")
   a = Artii::Base.new :font => 'slant'
   puts a.asciify('Fish Frenzy')
-  sleep 0.1
+  sleep 1
   'Copyleft 2019'
 end
 
@@ -19,12 +19,12 @@ end
 def main_menu
   prompt = TTY::Prompt.new
   prompt.select('Select an Option') do |menu|
-    menu.choice name: 'PLAY GAME!',  value: 1
+    menu.choice name: 'PLAY GAME!', value: 1
     menu.choice name: 'Rules', value: 2
-    menu.choice name: 'Leaderboards',  value: 3
-    menu.choice name: 'Fish Types', value:5
-    menu.choice name: 'Locations', value:6
-    menu.choice name: 'Quit Game', value:4
+    menu.choice name: 'Leaderboards', value: 3
+    menu.choice name: 'Fish Types', value: 5
+    menu.choice name: 'Locations', value: 6
+    menu.choice name: 'Quit Game', value: 4
   end
 end
 
@@ -46,9 +46,9 @@ end
 def location_menu
   prompt = TTY::Prompt.new
   prompt.select('') do |menu|
-    menu.choice name: 'Crystal Lake',  value: 1
+    menu.choice name: 'Crystal Lake', value: 1
     menu.choice name: 'Salt Water Swamp', value: 2
-    menu.choice name: 'Open Ocean',  value: 3
+    menu.choice name: 'Open Ocean', value: 3
     menu.choice name: 'Murky Meadows', value: 4
   end
 end
