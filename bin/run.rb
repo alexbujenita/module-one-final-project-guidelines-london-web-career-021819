@@ -1,8 +1,8 @@
 require_relative '../config/environment'
 
-
 def final_game
   greeting
+  # `afplay lib/art/sound/pac.mp3 &`
   sleep 1
   system("clear")
   main_menu_method
@@ -10,4 +10,8 @@ def final_game
   return "Copyleft 2019"
 end
 
-final_game
+
+t1 = Thread.new{(`afplay lib/art/sound/pac.mp3 &`)}
+t2 = Thread.new{(final_game)}
+t1.join
+t2.join

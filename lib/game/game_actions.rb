@@ -12,6 +12,7 @@ def fishing_session(user, location)
   sleep 1
   until times_fished == 5
     puts "*" * 80
+    spin_while_fishing
     user.fishing(location)
     puts "*" * 80
     case fishing_menu_when_fish_caught
