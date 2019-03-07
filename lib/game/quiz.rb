@@ -2,7 +2,87 @@ require 'pry'
 require 'tty-prompt'
 
 def quiz
+  quiz_time
+  puts "You can score a maximum of 7 points during this mini-game"
+  sleep 1
+  good_luck
   points = first + second + third + fourth + fifth + sixth + seventh
+  
+  case points
+  when 0
+    `afplay lib/art/sound/drum-roll.mp3 &`
+    sleep 0.1
+    `afplay lib/art/sound/ohno.mp3 &`
+    sleep 0.2
+    puts '*' * 100
+    puts "All wrong, study fish some more or get a new hobby!"
+  when 1
+    `afplay lib/art/sound/drum-roll.mp3 &`
+    puts '*' * 100
+    puts "You scored #{points} points"
+    sleep 0.5
+    puts '*' * 100
+    puts "I know you can do better than this!"
+    puts '*' * 100
+    puts "Give it another go"
+    sleep 2
+  when 2
+    `afplay lib/art/sound/drum-roll.mp3 &`
+    puts '*' * 100
+    puts "You scored #{points} points"
+    puts '*' * 100
+    puts "I know you can do better than this!"
+    puts '*' * 100
+    puts "Give it another go"
+    sleep 2
+  when 3
+    `afplay lib/art/sound/drum-roll.mp3 &`
+    puts '*' * 100
+    puts "You scored #{points} points"
+    puts '*' * 100
+    puts "I know you can do better than this!"
+    puts '*' * 100
+    puts "Give it another go"
+    sleep 2
+  when 4
+    `afplay lib/art/sound/drum-roll.mp3 &`
+    puts '*' * 100
+    puts "You scored #{points} points"
+    puts '*' * 100
+    puts "You are doing good!"
+    sleep 2
+  when 5
+    `afplay lib/art/sound/drum-roll.mp3 &`
+    puts '*' * 100
+    puts "You scored #{points} points"
+    puts '*' * 100
+    puts "Impressive fish knowledge!"
+    sleep 2
+  when 6
+    `afplay lib/art/sound/drum-roll.mp3 &`
+    puts '*' * 100
+    puts "You scored #{points} points"
+    sleep 1
+    puts '*' * 100
+    puts "You were so close to score the maximum amount of points!"
+    sleep 1
+    puts '*' * 100
+    puts "Why don't you give it another try?!"
+    sleep 2
+  when 7
+    `afplay lib/art/sound/drum-roll.mp3 &`
+    puts '*' * 100
+    puts "Great job!!!"
+    sleep 0.3
+    `afplay lib/art/sound/vic.mp3 &`
+    puts '*' * 100
+    puts "You got all of the questions right!!!"
+    sleep 1
+    puts '*' * 100
+    puts "Go around the world fishing and spreading your knowledge!"
+    sleep 2
+  end
+
 end
 
 def first
