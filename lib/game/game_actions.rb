@@ -17,7 +17,7 @@ def fishing_session(user, location)
     puts "*" * 80
     case fishing_menu_when_fish_caught
     when 1
-      puts "Fish kept"
+      puts "You kept the fish!"
       puts ''
       in_between_fishing(in_between_menu) # Do SOmething
       # binding.pry
@@ -75,11 +75,11 @@ def top_ten_leaderboard
   system('clear')
   puts "TOP 10 HIGHSCORES"
   table = TTY::Table.new
-  table << ['Rank', 'Username','Score']
+  table << ['Rank', 'Username', 'Location','Score']
   n = 1
   top_ten = Game.order(total_points: :desc).limit(10)
   top_ten.each do |game|
-    table << [n, User.find(game.user_id).username, game.total_points]
+    table << [n, User.find(game.user_id).username, game.location.name, game.total_points]
     n +=1
   end
   puts table.render :ascii

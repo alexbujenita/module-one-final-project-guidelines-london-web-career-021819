@@ -12,15 +12,11 @@ def in_between_fishing(choice)
   when 'Continue fishing'
     puts ""
   when 'Drink'
-    drink_prompt = TTY::Prompt.new
-
     choices = %w[Beer RedBull Water Tea Coffee]
-    drinks = drink_prompt.multi_select('What would you like to drink?', choices)
-    puts '|' * 100
+    drink_prompt = TTY::Prompt.new
+    drink_prompt.multi_select('What would you like to drink?', choices)
     sleep 1
-    puts 'You feel better now and can go back to fishing!'
-    puts '|' * 100
-    sleep 1
+    puts ""
     puts "--------You're feeling refreshed now! Get back to fishing!--------"
     puts ""
     sleep 2
@@ -38,4 +34,3 @@ def spin_while_fishing
   sleep(rand(1..5))
   spinner.success('Fish bit!')
 end
-

@@ -12,7 +12,7 @@ def login
 end
 
 def create_user
-  user_input = login
+  user_input = login.downcase.capitalize
   User.create(username: user_input)
 end
 
