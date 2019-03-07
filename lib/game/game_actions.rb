@@ -105,7 +105,7 @@ def location_info
   puts ""
   puts "OPEN OCEAN - Are you looking for average sized fish? You've chosen the wrong place. Only big game and tiny fish here."
   puts ""
-  puts "MURKEY MEADOW - All medium fish have been eaten by a group of Sunfish varying massivly in size. Try and catch some."
+  puts "MURKEY MEADOW - All medium fish have been eaten by a group of Sunfish varying massively in size. Try and catch some."
   puts ""
   puts "SALT SWAMP - The swamps varying environment make it a hard place to fish. Who knows what you might find."
 end
