@@ -31,3 +31,13 @@ def random_quote
   puts sntc
   `say -v #{voices.sample} "#{sntc}"`
 end
+
+def quiz_time
+  voices = %w[Alex Daniel Fiona Fred Karen Moira Tessa Veena Victoria Kyoko]
+  `say -v #{voices.sample} "It's quiz time."`
+end
+
+def good_luck
+  voices = %w[Alex Daniel Fiona Fred Karen Moira Tessa Veena Victoria Kyoko]
+  `say -v #{voices.sample} "Good Luck!!!"`
+end
