@@ -42,7 +42,7 @@ def game_over
   puts greeting
 end
 
-# From Fez
+
 def location_menu
   prompt = TTY::Prompt.new
   prompt.select('') do |menu|
