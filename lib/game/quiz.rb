@@ -82,11 +82,11 @@ def quiz
     puts "Go around the world fishing and spreading your knowledge!"
     sleep 2
   end
-
 end
 
 def first
   prompt = TTY::Prompt.new
+
   prompt.select('Are dugongs considered fish?') do |menu|
     menu.choice :name => 'Yes', value: 0
     menu.choice :name => 'No', value: 1
