@@ -144,5 +144,9 @@ def main_menu_method
     location_info
     puts ""
     main_menu_method
+  when 7
+    quiz
+    puts ''
+    main_menu_method
   end
 end

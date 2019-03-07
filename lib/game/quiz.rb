@@ -3,15 +3,13 @@ require 'tty-prompt'
 
 def quiz
   points = first + second + third + fourth + fifth + sixth + seventh
-  binding.pry
-  'asd'
 end
 
 def first
   prompt = TTY::Prompt.new
-  prompt.select('Would you buy this game?') do |menu|
-    menu.choice :name => 'Yes', value: 1
-    menu.choice :name => 'Never', value: -90
+  prompt.select('Are dugongs considered fish?') do |menu|
+    menu.choice :name => 'Yes', value: 0
+    menu.choice :name => 'No', value: 1
   end
 end
 
@@ -68,11 +66,9 @@ end
 def seventh
   prompt = TTY::Prompt.new
   prompt.select("What are baby salmon called when emerging from their eggs?") do |menu|
-    menu.choice :name => 'Carp', value: 1
-    menu.choice :name => 'Tuna', value: 0
-    menu.choice :name => 'Swimming bear', value: 0
-    menu.choice :name => 'Fry', value: 0
+    menu.choice :name => 'Little Carp', value: 0
+    menu.choice :name => 'Pry', value: 0
+    menu.choice :name => 'Lil', value: 0
+    menu.choice :name => 'Fry', value: 1
   end
 end
-
-# quiz
