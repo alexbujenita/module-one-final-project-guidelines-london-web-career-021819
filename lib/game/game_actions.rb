@@ -39,7 +39,6 @@ def fishing_session(user, location)
         GameCatch.last.delete
         thrown_back_fish +=1
       end
-    when 4
     end
   end
 end
