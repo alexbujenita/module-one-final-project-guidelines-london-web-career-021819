@@ -45,6 +45,31 @@ end
 
 def show_rules
   system('clear')
+  puts 'Please Fish Sustainably!'
+  puts "
+                                  ____
+                               /\\|    ~~\\
+                             /'  |   ,-. `\\
+                            |       | X |  |
+                           _|________`-'   |X
+                         /'          ~~~~~~~~~,
+                       /'             ,_____,/_
+                    ,/'        ___,'~~         ;
+~~~~~~~~|~~~~~~~|---          /  X,~~~~~~~~~~~~,
+        |       |            |  XX'____________'
+        |       |           /' XXX|            ;
+        |       |        --x|  XXX,~~~~~~~~~~~~,
+        |       |          X|     '____________'
+        |   o   |---~~~~\\__XX\\             |XX
+        |       |          XXX`\\          /XXXX
+~~~~~~~~'~~~~~~~'               `\\xXXXXx/ \\XXX
+                                 /XXXXXX\\
+                               /XXXXXXXXXX\\
+                             /XXXXXX/^\\XXXXX\\
+                            ~~~~~~~~   ~~~~~~~
+
+"
+  puts ""
   puts 'RULES OF FISHING FRENZY'
   puts '- Each time you play you have 5 opportunities to catch a fish!'
   puts '- Every time you catch a fish you must decide whether you would like to keep it forever or release it back into the wild'
@@ -115,6 +140,22 @@ end
 
 def location_info
   system('clear')
+  puts "
+
+                U
+             ,~~|  |\\                                    ,
+             `~~|  |=\\                                . ~ ~ .
+                |  |__\\                             .'@ ))    '..~
+       ]-------,|__|__,>---                          > - ~``  '~\\{
+        \\=====o==o===.'                                          \\
+       [|___>^<.___.'`.                                       __,,-,._
+       _,-' '` .   ` . J.._          ___,.....,---......,--''''` .  '``__,.....,---......,--''''` .
+    ,-' .  '  .  '  .  '  .`....---'''  .  '><>  .  '  .  '  .  '  .  '  ..  '  .  '  .  '  .  '  .  '
+.-''  '` .  ><))> '` .  '` .  '`--..__'` .  '` .  '` .  '` .  '` .  '` .  '` . ><> '` .  '` .  '` .  '
+  .     .  '  .  '  .  '  .  '  .  '  '\\.  '  .  '  <>< '  .  '  .  '  .  '\\.  '  .  '  .  '  .  '
+'` .  '` .  '` .  '` .  '` .  '` <><.  '` .`.  '` .  '` .  '` .  '` .  '`.  '` .  '` .  '`><> .  '` .
+
+"
   puts "CRYSTAL LAKE - Clear blue waters and lack of waves attract ALL varities of fish. A ideal location for beginners."
   puts ""
   puts "OPEN OCEAN - Are you looking for average sized fish? You've chosen the wrong place. Only big game and tiny fish here."
