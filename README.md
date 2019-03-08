@@ -1,6 +1,6 @@
 # Fish Frenzy CLI Database Game
 
-## Introduction
+### Introduction
 Fish Frenzy is a single player, command line interface, arcade game that involves the user going fishing to get a high score.
 
 ### How to install
@@ -21,7 +21,7 @@ Fish Frenzy is a single player, command line interface, arcade game that involve
 -Enjoy
 
 
-##Creators
+### Creators
 Alex - github: alexbujenita
 Faiz - github: Faizerz
 
