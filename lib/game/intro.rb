@@ -18,10 +18,11 @@ end
 
 def main_menu
   prompt = TTY::Prompt.new
-  prompt.select('Select an Option') do |menu|
+  prompt.select('Select an Option', per_page: 8) do |menu|
     menu.choice name: 'PLAY GAME!', value: 1
     menu.choice name: 'Rules', value: 2
-    menu.choice name: 'Leaderboards', value: 3
+    menu.choice name: 'Leaderboard', value: 3
+    menu.choice name: 'Biggest Catch', value: 8
     menu.choice name: 'Fish Types', value: 5
     menu.choice name: 'Locations', value: 6
     menu.choice name: 'Fish Quiz', value: 7
